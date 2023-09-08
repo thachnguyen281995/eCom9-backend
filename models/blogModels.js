@@ -8,13 +8,12 @@ var blogSchema = new mongoose.Schema(
             required: true,
         },
         description: {
-            type: String,
+            type: Array,
             required: true,
         },
         category: {
             type: String,
             required: true,
-            unique: true,
         },
         numViews: {
             type: Number,
@@ -55,7 +54,14 @@ var blogSchema = new mongoose.Schema(
               url: String,
             },
           ],
+          listDesc : [
+            {
+                subTitle:String,
+                subDesc:Array
+            },
+          ]
     },
+    
     {
         toJSON: {
             virtuals: true,

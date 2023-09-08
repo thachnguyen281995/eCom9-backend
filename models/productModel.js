@@ -8,6 +8,21 @@ var productSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    disCount: {
+      type: Number,
+    },
+    ram: {
+      type: Array,
+      required: true,
+    },
+    option: [
+      {
+        public_id: String,
+        ram:String,
+        price:Number,
+        oldPrice:Number
+      },
+    ],
     slug: {
       type: String,
       // required: true,
@@ -22,9 +37,15 @@ var productSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    strikePrice: {
+      type: Number,
+    },
     category: {
       type: String,
       required: true,
+    },
+    targetDate: {
+      type: String,
     },
     brand: {
       type: String,
@@ -44,6 +65,23 @@ var productSchema = new mongoose.Schema(
         url: String,
       },
     ],
+    manHinh: String,
+    cameraSau: String,
+    cameraSelfie: String,
+    boNhoTrong: String,
+    cpu: String,
+    dungLuongPin: String,
+    theSim: String,
+    heDieuHanh: String,
+    xuatXu: String,
+    thoiGianRaMat: String,
+    danhGiaChiTiet:String,
+    slideImage :[
+      {
+        url:String
+      }
+    ],
+    descImage:[],
     color: [],
     tags: String,
     ratings: [
@@ -62,4 +100,4 @@ var productSchema = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model("Product", productSchema,"products");
+module.exports = mongoose.model("Product", productSchema, "products");
